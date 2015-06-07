@@ -9,7 +9,7 @@ public abstract class AbstractCodejamTest {
 
 	protected String path;
 	protected static final String MESSAGE = "The solution is incorrect!";
-	protected AbstractCodejam classToTest;
+	protected ICodejam classToTest;
 
 	@Before
 	public void setPath() throws InstantiationException, IllegalAccessException {
@@ -25,5 +25,5 @@ public abstract class AbstractCodejamTest {
 	@Test
 	abstract public void testWithLargeInput() throws IOException;
 
-	abstract protected Class<? extends AbstractCodejam> getClassOfClassToTest();
+	abstract protected Class<? extends ICodejam> getClassOfClassToTest();
 }

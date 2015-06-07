@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class AlienLanguage extends AbstractCodejam {
+public class AlienLanguage implements ICodejam {
 
 	public static final String IN_SMALL = "A-small-practice.in";
 	public static final String OUT_SMALL = "A-small-practice.out";

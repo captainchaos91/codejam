@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class StoreCredit extends AbstractCodejam {
+public class StoreCredit implements ICodejam {
 
 	public static final String IN_SMALL = "A-small-practice.in";
 	public static final String OUT_SMALL = "A-small-practice.out";

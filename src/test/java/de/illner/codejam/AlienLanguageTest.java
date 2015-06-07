@@ -23,7 +23,7 @@ public class AlienLanguageTest extends AbstractCodejamTest {
 	}
 
 	@Override
-	protected Class<? extends AbstractCodejam> getClassOfClassToTest() {
+	protected Class<? extends ICodejam> getClassOfClassToTest() {
 		return AlienLanguage.class;
 	}
 }

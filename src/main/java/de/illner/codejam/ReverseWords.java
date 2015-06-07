@@ -2,7 +2,7 @@ package de.illner.codejam;
 
 import java.io.FileNotFoundException;
 
-public class ReverseWords extends AbstractCodejam {
+public class ReverseWords implements ICodejam {
 
 	public static final String IN_SMALL = "B-small-practice.in";
 	public static final String OUT_SMALL = "B-small-practice.out";

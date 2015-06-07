@@ -5,7 +5,7 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class MinimumScalarProduct extends AbstractCodejam {
+public class MinimumScalarProduct implements ICodejam {
 
 	public static final String IN_SMALL = "A-small-practice.in";
 	public static final String OUT_SMALL = "A-small-practice.out";
