@@ -11,6 +11,8 @@ public final class IoHelperForCodejam {
 	private PrintWriter printWriter;
 
 	public IoHelperForCodejam(Class<?> caller, String inFile, String outFile) throws FileNotFoundException {
+		// Set line.separator manually to avoid differences between running tests on windows or linux
+		System.setProperty("line.separator", "\r\n");
 		this.scanner = new Scanner(new File(constructResourcePath(caller) + inFile));
 		this.printWriter = new PrintWriter(constructResourcePath(caller) + outFile);
 	}
