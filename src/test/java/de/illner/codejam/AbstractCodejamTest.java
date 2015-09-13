@@ -7,16 +7,14 @@ import org.junit.Test;
 
 public abstract class AbstractCodejamTest {
 
-	protected String path;
-	protected static final String MESSAGE = "The solution is incorrect!";
-	protected ICodejam classToTest;
+	String path;
+	static final String MESSAGE = "The solution is incorrect!";
+	Codejam classToTest;
 
 	@Before
 	public void setPath() throws InstantiationException, IllegalAccessException {
-		classToTest = getClassOfClassToTest().newInstance();
-		path = "src/test/resources/"
-				+ (this.getClass().getName().substring(0, this.getClass().getName().length() - 4).toLowerCase() + "/")
-						.replace('.', '/');
+		classToTest = getClassToTest().newInstance();
+		path = "src/test/resources/" + (this.getClass().getName().substring(0, this.getClass().getName().length() - 4).toLowerCase() + "/").replace('.', '/');
 	}
 
 	@Test
@@ -25,5 +23,5 @@ public abstract class AbstractCodejamTest {
 	@Test
 	abstract public void testWithLargeInput() throws IOException;
 
-	abstract protected Class<? extends ICodejam> getClassOfClassToTest();
+	abstract Class<? extends Codejam> getClassToTest();
 }

@@ -5,12 +5,12 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public final class IoHelperForCodejam {
+final class IoHelperForCodejam {
 
 	private Scanner scanner;
 	private PrintWriter printWriter;
 
-	public IoHelperForCodejam(Class<?> caller, String inFile, String outFile) throws FileNotFoundException {
+	IoHelperForCodejam(Class<?> caller, String inFile, String outFile) throws FileNotFoundException {
 		// Set line.separator manually to avoid differences between running tests on windows or linux
 		System.setProperty("line.separator", "\r\n");
 		this.scanner = new Scanner(new File(constructResourcePath(caller) + inFile));
@@ -38,19 +38,19 @@ public final class IoHelperForCodejam {
 		return path;
 	}
 
-	public Scanner getScanner() {
+	Scanner getScanner() {
 		return scanner;
 	}
 
-	public void printLineWithWriter(String line) {
+	void printLineWithWriter(String line) {
 		printWriter.println(line);
 	}
 
-	public void closeScanner() {
+	void closeScanner() {
 		scanner.close();
 	}
 
-	public void closeWriter() {
+	void closeWriter() {
 		printWriter.close();
 	}
 }

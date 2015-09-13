@@ -4,12 +4,12 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RopeIntranet implements ICodejam {
+class RopeIntranet extends Codejam {
 	
-	public static final String IN_SMALL = "A-small-practice.in";
-	public static final String OUT_SMALL = "A-small-practice.out";
-	public static final String IN_LARGE = "A-large-practice.in";
-	public static final String OUT_LARGE = "A-large-practice.out";
+	static final String IN_SMALL = "A-small-practice.in";
+	static final String OUT_SMALL = "A-small-practice.out";
+	static final String IN_LARGE = "A-large-practice.in";
+	static final String OUT_LARGE = "A-large-practice.out";
 	
 	public static void main(String[] args) throws FileNotFoundException {
 		RopeIntranet ropeIntranet = new RopeIntranet();
@@ -18,9 +18,7 @@ public class RopeIntranet implements ICodejam {
 	}
 
 	@Override
-	public void solve(Class<?> caller, String inFile, String outFile) throws FileNotFoundException {
-		IoHelperForCodejam ioHelper = new IoHelperForCodejam(caller, inFile, outFile);
-
+	void solveProblem(IoHelperForCodejam ioHelper) {
 		int cntTests = Integer.parseInt(ioHelper.getScanner().nextLine());
 		for (int i = 0; i < cntTests; i++)
 		{
@@ -38,9 +36,6 @@ public class RopeIntranet implements ICodejam {
 			
 			ioHelper.printLineWithWriter("Case #" + (i+1) + ": " + countInresects(left, right));
 		}
-		
-		ioHelper.closeScanner();
-		ioHelper.closeWriter();
 	}
 
 	private int countInresects(List<Integer> left, List<Integer> right) {
@@ -62,5 +57,4 @@ public class RopeIntranet implements ICodejam {
 		}
 		return cntIntersect;
 	}
-
 }

@@ -5,12 +5,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class StoreCredit implements ICodejam {
+class StoreCredit extends Codejam {
 
-	public static final String IN_SMALL = "A-small-practice.in";
-	public static final String OUT_SMALL = "A-small-practice.out";
-	public static final String IN_LARGE = "A-large-practice.in";
-	public static final String OUT_LARGE = "A-large-practice.out";
+	static final String IN_SMALL = "A-small-practice.in";
+	static final String OUT_SMALL = "A-small-practice.out";
+	static final String IN_LARGE = "A-large-practice.in";
+	static final String OUT_LARGE = "A-large-practice.out";
 
 	public static void main(String[] args) throws FileNotFoundException {
 		StoreCredit storeCredit = new StoreCredit();
@@ -19,15 +19,12 @@ public class StoreCredit implements ICodejam {
 	}
 
 	@Override
-	public void solve(Class<?> caller, String inFile, String outFile) throws FileNotFoundException {
-		IoHelperForCodejam ioHelper = new IoHelperForCodejam(caller, inFile, outFile);
+	void solveProblem(IoHelperForCodejam ioHelper) {
 		int tests = ioHelper.getScanner().nextInt();
 		for (int test = 1; test <= tests; test++) {
 			List<Integer> solution = findCorrectItemIndices(ioHelper.getScanner());
 			ioHelper.printLineWithWriter("Case #" + test + ": " + (solution.get(0) + 1) + " " + (solution.get(1) + 1));
 		}
-		ioHelper.closeScanner();
-		ioHelper.closeWriter();
 	}
 
 	private static List<Integer> findCorrectItemIndices(Scanner scanner) {

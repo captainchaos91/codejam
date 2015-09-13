@@ -5,12 +5,12 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class MinimumScalarProduct implements ICodejam {
+class MinimumScalarProduct extends Codejam {
 
-	public static final String IN_SMALL = "A-small-practice.in";
-	public static final String OUT_SMALL = "A-small-practice.out";
-	public static final String IN_LARGE = "A-large-practice.in";
-	public static final String OUT_LARGE = "A-large-practice.out";
+	static final String IN_SMALL = "A-small-practice.in";
+	static final String OUT_SMALL = "A-small-practice.out";
+	static final String IN_LARGE = "A-large-practice.in";
+	static final String OUT_LARGE = "A-large-practice.out";
 
 	public static void main(String[] args) throws FileNotFoundException {
 		MinimumScalarProduct minimumScalarProduct = new MinimumScalarProduct();
@@ -18,8 +18,9 @@ public class MinimumScalarProduct implements ICodejam {
 		System.out.println("Finished successfully!");
 	}
 
-	public void solve(Class<?> caller, String inFile, String outFile) throws FileNotFoundException {
-		IoHelperForCodejam ioHelper = new IoHelperForCodejam(caller, inFile, outFile);
+	
+	@Override
+	void solveProblem(IoHelperForCodejam ioHelper) {
 		int cntTests = Integer.parseInt(ioHelper.getScanner().nextLine());
 
 		for (int test = 1; test <= cntTests; test++) {
@@ -38,9 +39,8 @@ public class MinimumScalarProduct implements ICodejam {
 
 			ioHelper.printLineWithWriter("Case #" + test + ": " + solution);
 		}
-		ioHelper.closeScanner();
-		ioHelper.closeWriter();
 	}
+	
 
 	private static ArrayList<BigInteger> convertStringArrayToBigIntegerArray(String[] stringArray) {
 		ArrayList<BigInteger> intArray = new ArrayList<>();
@@ -49,5 +49,4 @@ public class MinimumScalarProduct implements ICodejam {
 		}
 		return intArray;
 	}
-
 }

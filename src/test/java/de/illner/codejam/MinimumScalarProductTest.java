@@ -10,22 +10,18 @@ public class MinimumScalarProductTest extends AbstractCodejamTest {
 
 	@Override
 	public void testWithSmallInput() throws IOException {
-		classToTest.solve(MinimumScalarProductTest.class, MinimumScalarProduct.IN_SMALL,
-				MinimumScalarProduct.OUT_SMALL);
-		assertEquals(MESSAGE, readFileToString(new File(path + MinimumScalarProduct.OUT_SMALL)),
-				readFileToString(new File(path + "solution-small.out")));
+		classToTest.solve(MinimumScalarProductTest.class, MinimumScalarProduct.IN_SMALL, MinimumScalarProduct.OUT_SMALL);
+		assertEquals(MESSAGE, readFileToString(new File(path + MinimumScalarProduct.OUT_SMALL)), readFileToString(new File(path + "solution-small.out")));
 	}
 
 	@Override
 	public void testWithLargeInput() throws IOException {
-		classToTest.solve(MinimumScalarProductTest.class, MinimumScalarProduct.IN_LARGE,
-				MinimumScalarProduct.OUT_LARGE);
-		assertEquals(MESSAGE, readFileToString(new File(path + MinimumScalarProduct.OUT_LARGE)),
-				readFileToString(new File(path + "solution-large.out")));
+		classToTest.solve(MinimumScalarProductTest.class, MinimumScalarProduct.IN_LARGE, MinimumScalarProduct.OUT_LARGE);
+		assertEquals(MESSAGE, readFileToString(new File(path + MinimumScalarProduct.OUT_LARGE)), readFileToString(new File(path + "solution-large.out")));
 	}
 
 	@Override
-	protected Class<? extends ICodejam> getClassOfClassToTest() {
+	Class<? extends Codejam> getClassToTest() {
 		return MinimumScalarProduct.class;
 	}
 }

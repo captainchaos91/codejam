@@ -21,7 +21,7 @@ public class RopeIntranetTest extends AbstractCodejamTest {
 	}
 
 	@Override
-	protected Class<? extends ICodejam> getClassOfClassToTest() {
+	Class<? extends Codejam> getClassToTest() {
 		return RopeIntranet.class;
 	}
 }
