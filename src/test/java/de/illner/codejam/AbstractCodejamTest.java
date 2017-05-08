@@ -1,27 +1,35 @@
 package de.illner.codejam;
 
+
 import java.io.IOException;
 
 import org.junit.Before;
 import org.junit.Test;
 
-public abstract class AbstractCodejamTest {
 
-	String path;
-	static final String MESSAGE = "The solution is incorrect!";
-	Codejam classToTest;
+public abstract class AbstractCodejamTest
+{
 
-	@Before
-	public void setPath() throws InstantiationException, IllegalAccessException {
-		classToTest = getClassToTest().newInstance();
-		path = "src/test/resources/" + (this.getClass().getName().substring(0, this.getClass().getName().length() - 4).toLowerCase() + "/").replace('.', '/');
-	}
+    String path;
+    static final String MESSAGE = "The solution is incorrect!";
+    Codejam classToTest;
 
-	@Test
-	abstract public void testWithSmallInput() throws IOException;
 
-	@Test
-	abstract public void testWithLargeInput() throws IOException;
+    @Before
+    public void setPath() throws InstantiationException, IllegalAccessException
+    {
+        classToTest = getClassToTest().newInstance();
+        path = "src/test/resources/" + (this.getClass().getName().substring(0, this.getClass().getName().length() - 4).toLowerCase() + "/").replace('.', '/');
+    }
 
-	abstract Class<? extends Codejam> getClassToTest();
+
+    @Test
+    abstract public void testWithSmallInput() throws IOException;
+
+
+    @Test
+    abstract public void testWithLargeInput() throws IOException;
+
+
+    abstract Class< ? extends Codejam> getClassToTest();
 }
